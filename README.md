@@ -67,7 +67,7 @@ Buffer file was updated. Goodbye.
   
 You can (and must) automate it periodically with cron for example, in order to check your RSS feeds:
 
-     root@host:~/Desktop# crontab -e
+     root@host:~/Desktop/RSS-Notifier# crontab -e
      */10 * * * * python3 /root/Desktop/RSS-Notifier/rss-notifier.py (>> /root/Desktop/RSS-Notifier/rss-updates.log 2>&1)
 
 
