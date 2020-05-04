@@ -11,7 +11,7 @@ During installation (setup.py), the script writes a configuration file (config.t
 
 **WARNING** : your e-mail credentials (for sending news) are stored in this file with an encoding. Please run this script on a machine over which you have control and which is protected. No one should be able to read the file created.
 
-## Usage
+## Configuration
     git clone //////////////////
     root@host:~/Desktop# python.exe setup.py -h
 **Output :** 
@@ -39,7 +39,7 @@ Successful recording of RSS entries in the buffer file.
 
 RSS-Notifier is now ready. Execute rss-notifier.py now and automate it.
 
--------------------- 
+## Usage
     
 If the script does not find new news in your RSS feed (s), here is the result:
     
