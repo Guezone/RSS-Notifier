@@ -99,7 +99,7 @@ def sendMail(rss, sender, password, smtpsrv, port, tls, receiver,title, url, sum
     try:
 	    smtpserver = smtplib.SMTP(smtpsrv,port)
 	    msg = MIMEMultipart()
-	    msg['Subject'] = 'FeedNotifier - New Alert'
+	    msg['Subject'] = 'RSS-Notifier - New Alert'
 	    msg['From'] = sender
 	    msg['To'] = receiver
 	    msg.attach(MIMEText(body, 'plain'))
