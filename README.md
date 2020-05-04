@@ -12,7 +12,7 @@ During installation (setup.py), the script writes a configuration file (config.t
 **WARNING** : your e-mail credentials (for sending news) are stored in this file with an encoding. Please run this script on a machine over which you have control and which is protected. No one should be able to read the file created.
 
 ## Configuration
-    root@host:~/Desktop/# git clone https://github.com/Guezone/RSS-Notifier
+    root@host:~/Desktop/# git clone https://github.com/Guezone/RSS-Notifier && cd RSS-Notifier/
     root@host:~/Desktop/RSS-Notifier# python.exe setup.py -h
 **Output :** 
   -h, --help           			show this help message and exit
