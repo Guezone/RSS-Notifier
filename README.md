@@ -12,8 +12,8 @@ During installation (setup.py), the script writes a configuration file (config.t
 **WARNING** : your e-mail credentials (for sending news) are stored in this file with an encoding. Please run this script on a machine over which you have control and which is protected. No one should be able to read the file created.
 
 ## Configuration
-    git clone //////////////////
-    root@host:~/Desktop# python.exe setup.py -h
+    root@host:~/Desktop/# git clone https://github.com/Guezone/RSS-Notifier
+    root@host:~/Desktop/RSS-Notifier# python.exe setup.py -h
 **Output :** 
   -h, --help           			show this help message and exit
   -rss RSS_URL         		set your RSS url
@@ -27,7 +27,7 @@ During installation (setup.py), the script writes a configuration file (config.t
 ----------------
 Start a setup script to build your configuration : 
 
-    root@host:~/Desktop# python.exe setup.py -rss 'https://www.cert.ssi.gouv.fr/alerte/feed/;https://www.zataz.com/feed/' -sender account@mail.com -p 'mYPASSw0rd' -server smtp.mail.com -port 587 -tls yes -r johndoe@mail.com
+    root@host:~/Desktop/RSS-Notifier# python.exe setup.py -rss 'https://www.cert.ssi.gouv.fr/alerte/feed/;https://www.zataz.com/feed/' -sender account@mail.com -p 'mYPASSw0rd' -server smtp.mail.com -port 587 -tls yes -r johndoe@mail.com
     
 
 **Output :** 
@@ -43,7 +43,7 @@ RSS-Notifier is now ready. Execute rss-notifier.py now and automate it.
     
 If the script does not find new news in your RSS feed (s), here is the result:
     
-    root@host:~/Desktop# python3 rss-notifier.py 
+    root@host:~/Desktop/RSS-Notifier# python3 rss-notifier.py 
 **Output :** 
 Configuration is good.
 No news. Goodbye
@@ -51,7 +51,7 @@ No news. Goodbye
   -------------------- 
   If the script finds new news in your RSS feed (s), here is the result:
 
-    root@host:~/Desktop# python3 rss-notifier.py
+    root@host:~/Desktop/RSS-Notifier# python3 rss-notifier.py
 
 
 **Output :** 
@@ -68,6 +68,6 @@ Buffer file was updated. Goodbye.
 You can (and must) automate it periodically with cron for example, in order to check your RSS feeds:
 
      root@host:~/Desktop# crontab -e
-     */10 * * * * python3 /root/Desktop/rss-notifier.py (>> /root/Desktop/rss-updates.log 2>&1)
+     */10 * * * * python3 /root/Desktop/RSS-Notifier/rss-notifier.py (>> /root/Desktop/RSS-Notifier/rss-updates.log 2>&1)
 
 
