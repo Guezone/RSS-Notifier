@@ -3,12 +3,12 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 def mailTester(rss, sender, passwd, smtpsrv, port, tls, receiver):
-    body = "Test message sent by FeedNotifier.\n\n"+rss
+    body = "Test message sent by RSS-Notifier.\n\n"+rss
     try:
         print("\nPlease wait. A test message will be sent to test your configuration.")
         smtpserver = smtplib.SMTP(smtpsrv,port)
         msg = MIMEMultipart()
-        msg['Subject'] = 'FeedNotifier - TEST.'
+        msg['Subject'] = 'RSS-Notifier - TEST.'
         msg['From'] = sender
         msg['To'] = receiver
         msg.attach(MIMEText(body, 'plain'))
