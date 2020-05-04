@@ -20,14 +20,15 @@ For install feedparser and smtplib :
     root@host:~/Desktop/# git clone https://github.com/Guezone/RSS-Notifier && cd RSS-Notifier/
     root@host:~/Desktop/RSS-Notifier# python.exe setup.py -h
 **Output :** 
-  -h, --help           			show this help message and exit
-  -rss RSS_URL         		set your RSS url
-  -sender email-addr   	set sender email address
-  -p your_password     	set sender SMTP password
-  -server smtp_server  	set SMTP server name
-  -port port           			set SMTP port used by the server
-  -tls yes|no          			use TLS to send email
-  -r email-addr        		set receiver email address
+
+      -h, --help            show this help message and exit
+      -rss RSS_URL          set your RSS url
+      -sender email-addr    set sender email address
+      -p your_password      set sender SMTP password
+      -server smtp_server   set SMTP server name
+      -port port            set SMTP port used by the server
+      -tls yes|no           use TLS to send email
+      -r email-addr         set receiver email address
 
 ----------------
 Start a setup script to build your configuration : 
@@ -43,6 +44,8 @@ Current RSS feed recording in progress...
 Successful recording of RSS entries in the buffer file.
 
 RSS-Notifier is now ready. Execute rss-notifier.py now and automate it.
+
+
 
 ## Usage
     
@@ -67,6 +70,8 @@ Email was sent.
 
 Updating buffer file...
 Buffer file was updated. Goodbye.
+
+
 
 ## Automating
   
