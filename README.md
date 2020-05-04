@@ -14,6 +14,7 @@ During installation (setup.py), the script writes a configuration file (config.t
 RSS-Notifier require **feedparser** and **smtplib** python librairies, **Python 3** (tested with 3.7.3) and **Linux based system** (tested on Debian 10).
 
 For install feedparser and smtplib : 
+    
     pip3 install feedparser && pip3 install smtplib   
 
 ## Configuration
