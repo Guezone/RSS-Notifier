@@ -98,7 +98,7 @@ def main():
     parser.add_argument("-p",nargs=1,required=True,metavar="your_password",help="set sender SMTP password")
     parser.add_argument("-server",nargs=1,required=True,metavar="smtp_server",help="set SMTP server name")
     parser.add_argument("-port",nargs=1,required=True,metavar="port",help="set SMTP port used by the server", type=int)
-    parser.add_argument("-tls",nargs=1,required=True,metavar="yes|no",help="use TLS to send email")
+    parser.add_argument("-tls",nargs=1,required=True,metavar="yes|no",help="use TLS for SMTP authentication")
     parser.add_argument("-r",nargs=1,required=True,metavar="email-addr",help="set receiver email address")
     
     args = parser.parse_args()
