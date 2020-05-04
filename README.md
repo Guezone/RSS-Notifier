@@ -28,7 +28,7 @@ For install feedparser and smtplib :
       -p your_password      set sender SMTP password
       -server smtp_server   set SMTP server name
       -port port            set SMTP port used by the server
-      -tls yes|no           use TLS to send email
+      -tls yes|no           use TLS for SMTP authentication
       -r email-addr         set receiver email address
 
 ----------------
