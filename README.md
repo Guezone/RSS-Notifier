@@ -19,7 +19,7 @@ For install feedparser and smtplib :
 
 ## Configuration
     root@host:~/Desktop/# git clone https://github.com/Guezone/RSS-Notifier && cd RSS-Notifier/
-    root@host:~/Desktop/RSS-Notifier# python.exe setup.py -h
+    root@host:~/Desktop/RSS-Notifier# python3 setup.py -h
 **Output :** 
 
       -h, --help            show this help message and exit
@@ -34,7 +34,7 @@ For install feedparser and smtplib :
 ----------------
 Start a setup script to build your configuration : 
 
-    root@host:~/Desktop/RSS-Notifier# python.exe setup.py -rss 'https://www.cert.ssi.gouv.fr/alerte/feed/;https://www.zataz.com/feed/' -sender account@mail.com -p 'mYPASSw0rd' -server smtp.mail.com -port 587 -tls yes -r johndoe@mail.com
+    root@host:~/Desktop/RSS-Notifier# python3 setup.py -rss 'https://www.cert.ssi.gouv.fr/alerte/feed/;https://www.zataz.com/feed/' -sender account@mail.com -p 'mYPASSw0rd' -server smtp.mail.com -port 587 -tls yes -r johndoe@mail.com
     
 
 **Output :** 
