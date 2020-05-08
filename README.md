@@ -10,10 +10,6 @@ During installation (setup.py), the script writes a configuration file (config.t
 
 <p align="center"><a href="url"><img src="img/email.jpg" height="" width="263" ></a><br><br></p>
 
-
-
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 ## Requirements 
 RSS-Notifier require **feedparser** and **smtplib** python librairies, **Python 3** (tested with 3.7.3) and **Linux based system** (tested on Debian 10).
 
