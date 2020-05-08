@@ -6,13 +6,14 @@ With each new news on your / your RSS feed, an email sent you with the title, th
 
 During installation (setup.py), the script writes a configuration file (config.txt) with the information entered on the command line.
 
-![desc](img/logo.png)
-
-
 **WARNING** : your e-mail credentials (for sending news) are stored in this file with an encoding. Please run this script on a machine over which you have control and which is protected. No one should be able to read the file created.
 
-![desc](img/email.jpg =484x880)
+<p align="center"><a href="url"><img src="img/email.jpg" height="" width="263" ></a><br><br></p>
 
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 ## Requirements 
 RSS-Notifier require **feedparser** and **smtplib** python librairies, **Python 3** (tested with 3.7.3) and **Linux based system** (tested on Debian 10).
 
