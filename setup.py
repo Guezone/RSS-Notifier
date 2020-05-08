@@ -3,15 +3,23 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 def mailTester(rss, sender, passwd, smtpsrv, port, tls, receiver):
-    body = "Test message sent by RSS-Notifier.\n\n"+rss
+    body = ""
+    with open('template.html', 'r') as template:
+        html_code = template.read()
+        html_code = html_code.replace("Responsive HTML email templates","RSS-Notifier - Test email.")
+        html_code = html_code.replace("body body body body", "RSS-Notifier is now operational. The SMTP authentication, the recovery of your RSS feeds as well as the sending of the mail was successful.")
+        html_code = html_code.replace("See more details","Follow my Github")
+        body = html_code.replace("URL OF THE NEWS","https://github.com/Guezone/RSS-Notifier")
+        
+
     try:
         print("\nPlease wait. A test message will be sent to test your configuration.")
         smtpserver = smtplib.SMTP(smtpsrv,port)
         msg = MIMEMultipart()
-        msg['Subject'] = 'RSS-Notifier - TEST.'
+        msg['Subject'] = 'RSS-Notifier - Test email.'
         msg['From'] = sender
         msg['To'] = receiver
-        msg.attach(MIMEText(body, 'plain'))
+        msg.attach(MIMEText(body, 'html'))
     except:
         print("Incorrect configuration. Exit")
         exit()
