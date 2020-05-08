@@ -7,7 +7,6 @@ def checkConfig(rss, sender, receiver, password, smtpsrv, port, tls):
 	script_path = os.path.abspath(__file__)
 	dir_path = script_path.replace("rss-notifier.py","")
 	config = open(dir_path+"config.txt","r")
-
 	for line in config.readlines():
 		if "rssfeed(=)" in line:
 			rss_conf = line.split("(=)")
@@ -94,31 +93,38 @@ def rssPoller(rss, sender, receiver, password, smtpsrv, port, tls):
 		print("Buffer file was updated. Goodbye.")
 
 def sendMail(rss, sender, password, smtpsrv, port, tls, receiver,title, url, summary):
-    body = "Title : {}\n\nURL : {}\n\nSummary : {}\n\n".format(title,url,summary)
-    print("One news detected. Sending email...")
-    try:
-	    smtpserver = smtplib.SMTP(smtpsrv,port)
-	    msg = MIMEMultipart()
-	    msg['Subject'] = 'RSS-Notifier - New Alert'
-	    msg['From'] = sender
-	    msg['To'] = receiver
-	    msg.attach(MIMEText(body, 'plain'))
-    except:
-        print("Failed to send email.")
-        exit()
-    try:
-        if tls == "yes":
-            smtpserver.ehlo()
-            smtpserver.starttls()
-            smtpserver.login(sender, password)
-            smtpserver.sendmail(sender, receiver, msg.as_string())
-        elif tls == "no":
-            smtpserver.login(sender, password)
-            smtpserver.sendmail(sender, receiver, msg.as_string())
-        print("Email was sent.\n")
-    except:
-        print("An error occurred during authentication with the SMTP server. Check the configuration and try again.")
-        exit()
+	body = ""
+	with open('template.html', 'r') as template:
+	    html_code = template.read()
+	    html_code = html_code.replace("Responsive HTML email templates",title)
+	    html_code = html_code.replace("body body body body", summary)
+	    body = html_code.replace("URL OF THE NEWS",url)
+    
+
+	print("One news detected. Sending email...")
+	try:
+		smtpserver = smtplib.SMTP(smtpsrv,port)
+		msg = MIMEMultipart()
+		msg['Subject'] = 'RSS-Notifier - New Alert'
+		msg['From'] = sender
+		msg['To'] = receiver
+		msg.attach(MIMEText(body, 'html'))
+	except:
+		print("Failed to send email.")
+		exit()
+	try:
+		if tls == "yes":
+			smtpserver.ehlo()
+			smtpserver.starttls()
+			smtpserver.login(sender, password)
+			smtpserver.sendmail(sender, receiver, msg.as_string())
+		elif tls == "no":
+			smtpserver.login(sender, password)
+			smtpserver.sendmail(sender, receiver, msg.as_string())
+			print("Email was sent.\n")
+	except:
+		print("An error occurred during authentication with the SMTP server. Check the configuration and try again.")
+		exit()
 
 def main():
 	checkConfig(rss, sender, receiver, password, smtpsrv, port, tls)
