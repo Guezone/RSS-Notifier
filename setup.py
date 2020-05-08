@@ -8,7 +8,7 @@ def mailTester(rss, sender, passwd, smtpsrv, port, tls, receiver):
         html_code = template.read()
         html_code = html_code.replace("Responsive HTML email templates","RSS-Notifier - Test email.")
         html_code = html_code.replace("body body body body", "RSS-Notifier is now operational. The SMTP authentication, the recovery of your RSS feeds as well as the sending of the mail was successful.")
-        html_code = html_code.replace("See more details","Follow my Github")
+        html_code = html_code.replace("See more details","Follow my on Github")
         body = html_code.replace("URL OF THE NEWS","https://github.com/Guezone/RSS-Notifier")
         
 
