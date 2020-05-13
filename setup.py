@@ -3,8 +3,10 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 def mailTester(rss, sender, passwd, smtpsrv, port, tls, receiver):
+    script_path = os.path.abspath(__file__)
+    dir_path = script_path.replace("setup.py","")
     body = ""
-    with open('template.html', 'r') as template:
+    with open(dir_path+'template.html', 'r') as template:
         html_code = template.read()
         html_code = html_code.replace("Responsive HTML email templates","RSS-Notifier - Test email.")
         html_code = html_code.replace("body body body body", "RSS-Notifier is now operational. The SMTP authentication, the recovery of your RSS feeds as well as the sending of the mail was successful.")
