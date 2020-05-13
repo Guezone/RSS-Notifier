@@ -93,8 +93,10 @@ def rssPoller(rss, sender, receiver, password, smtpsrv, port, tls):
 		print("Buffer file was updated. Goodbye.")
 
 def sendMail(rss, sender, password, smtpsrv, port, tls, receiver,title, url, summary):
+	script_path = os.path.abspath(__file__)
+	dir_path = script_path.replace("rss-notifier.py","")
 	body = ""
-	with open('template.html', 'r') as template:
+	with open(dir_path+'template.html', 'r') as template:
 	    html_code = template.read()
 	    html_code = html_code.replace("Responsive HTML email templates",title)
 	    html_code = html_code.replace("body body body body", summary)
